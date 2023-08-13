@@ -1,0 +1,57 @@
+@use "src/components/Cta/cta.scss";
+@use "src/components/Header/header.scss";
+@use "src/components/Greeting/greeting.scss";
+@use "src/components/MyWork/mywork.scss";
+@use "src/components/Hero/hero.scss";
+@use "src/app.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap");
+
+:root {
+  --color-violet-blue: #755cde;
+  --color-orange: #f6a560;
+  --color-pink: #f39e9e;
+  --color-tomato: #eb7565;
+  --color-cyan: #61c4b7;
+  --color-violet-red: #552049;
+  --color-black: #030303;
+  --color-grey: #7a746e;
+  --color-cream: #fff7f0;
+
+  --fs-h1: 1.9rem;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--color-cream);
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  padding: 0 1.4rem;
+  font-weight: bold;
+  border-radius: 1.4rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+h1,
+h2 {
+  color: var(--color-black);
+}
+
+p {
+  color: var(--color-grey);
+  line-height: 1.5;
+}

@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 6vh;
+
+  &__logo-container {
+    & svg {
+      height: 100%;
+      width: auto;
+      aspect-ratio: 1;
+    }
+  }
+}

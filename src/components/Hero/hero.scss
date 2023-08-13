@@ -1,0 +1,9 @@
+.hero {
+  &__text {
+    text-align: center;
+
+    & h1 {
+      font-size: var(--fs-h1);
+    }
+  }
+}
