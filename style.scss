@@ -19,6 +19,8 @@
   --color-cream: #fff7f0;
 
   --fs-h1: 1.9rem;
+  --fs-h2: 1.6rem;
+  --fs-h3: 1.4rem;
 }
 
 body {
@@ -38,17 +40,25 @@ svg {
 }
 
 .btn {
-  padding: 0 1.4rem;
+  padding: 0.8rem 1.4rem;
   font-weight: bold;
   border-radius: 1.4rem;
   border: none;
   outline: none;
   cursor: pointer;
+  color: var(--color-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
 h2 {
   color: var(--color-black);
+}
+
+h3 {
+  color: var(--color-cream);
 }
 
 p {

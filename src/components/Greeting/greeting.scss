@@ -1,0 +1,10 @@
+.greeting {
+  &__img-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  & h2 {
+    font-size: var(--fs-h2);
+  }
+}
