@@ -15,7 +15,7 @@ function App() {
       <Greeting />
       <MyWork />
       <Cta />
-      {/* <Header /> */}
+      <Header />
     </div>
   );
 }

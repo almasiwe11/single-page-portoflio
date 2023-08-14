@@ -7,7 +7,7 @@ const Greeting = () => {
         <img src="image-amy.webp" alt="Amy image" />
       </div>
 
-      <div className="greeting-text">
+      <div className="greeting__text">
         <h2>I’m Amy, and I’d love to work on your next project</h2>
         <p>
           I love working with others to create beautiful design solutions. I’ve

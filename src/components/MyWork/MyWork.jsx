@@ -54,18 +54,12 @@ const MyWork = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(2);
-  const [width, setWidth] = useState(window.innerWidth);
-  /*  useEffect(() => {
-    console.log("hi");
-  }, []); */
 
   return (
     <div className="myWork">
       <h2>My Work </h2>
       <ImageSlider
         slides={slides}
-        height={"15rem"}
-        width={"20"}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
       />

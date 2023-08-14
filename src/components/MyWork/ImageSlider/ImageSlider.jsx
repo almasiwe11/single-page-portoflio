@@ -1,36 +1,43 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const ImageSlider = ({
-  slides,
-  height,
-  currentIndex,
-  width,
-  setCurrentIndex,
-}) => {
-  const contLen = `${slides.length * width}rem`;
+const ImageSlider = ({ slides, currentIndex, setCurrentIndex }) => {
+  const contLen = `${slides.length * 100}%`;
   const imageSliderStyle = {
     width: "100%",
-    // overflow: "hidden",
+    overflow: "hidden",
   };
+
+  const [viewPortWidth, setViewPortWidth] = useState(
+    document.documentElement.clientWidth
+  );
+
+  let imageWidth;
+  let middle;
+
+  if (viewPortWidth < 950) {
+    imageWidth = viewPortWidth * 0.72;
+    middle = `translateX(${viewPortWidth * 0.15}px)`;
+  } else {
+    imageWidth = viewPortWidth * 0.4;
+    middle = `translateX(${viewPortWidth * 0.3}px)`;
+  }
 
   const sliderRef = useRef(null);
   const imgRef = useRef(null);
-
   const sliderStyleLong = {
-    height: height,
     display: "flex",
     gap: "1rem",
     width: contLen,
-    transform: `translateX(${-width * currentIndex}rem)`,
+    transform: `translateX(${(-imageWidth - 16) * currentIndex}px)`,
     transition: "transform 0.3s ease-out",
     // border: "2px solid blue",
   };
 
   const imgContainerStyle = {
     height: "100%",
-    width: `${width}rem`,
-    transform: `translateX(${9}%)`,
+    width: `${imageWidth}px`,
+    transform: middle,
     objectFit: "cover",
     // border: "1px solid red",
   };
@@ -40,6 +47,18 @@ const ImageSlider = ({
     height: "100%",
     width: "100%",
   };
+
+  useEffect(() => {
+    function handleResize() {
+      console.log(viewPortWidth);
+      setViewPortWidth(document.documentElement.clientWidth);
+    }
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [viewPortWidth]);
 
   function nextSlide() {
     if (currentIndex >= slides.length - 2) return;
@@ -53,11 +72,7 @@ const ImageSlider = ({
     sliderRef.current.style.transition = "transform 0.3s ease-out";
   }
 
-  console.log(currentIndex);
-
   useEffect(() => {
-    console.log(imgRef.current.style.width);
-
     sliderRef.current.addEventListener("transitionend", transitionEnd);
     function transitionEnd() {
       if (slides[currentIndex].tag === "Last Clone") {
@@ -86,14 +101,18 @@ const ImageSlider = ({
             style={imgContainerStyle}
             ref={imgRef}
           >
-            <img src={image.src} style={imgStyle} />
+            <img src={image.src} style={imgStyle} className="img" />
           </div>
         ))}
       </div>
 
       <div className="myWork__arrows">
-        <ArrowLeft onPress={prevSlide} />
-        <ArrowRight onPress={nextSlide} />
+        <div className="myWork__arr">
+          <ArrowLeft onPress={prevSlide} />
+        </div>
+        <div className="myWork__arr">
+          <ArrowRight onPress={nextSlide} />
+        </div>
       </div>
     </div>
   );
@@ -110,7 +129,7 @@ function ArrowLeft({ onPress }) {
       onClick={onPress}
     >
       <path
-        fill="black"
+        fill="white"
         d="M8 0 0 8l8 8 1.687-1.687-5.121-5.12h10.241V6.807H4.566l5.121-5.12z"
       />
     </svg>
@@ -126,7 +145,7 @@ function ArrowRight({ onPress }) {
       onClick={onPress}
     >
       <path
-        fill="black"
+        fill="white"
         d="m6.808 16 8-8-8-8-1.687 1.687 5.121 5.12H.001v2.386h10.241l-5.121 5.12z"
       />
     </svg>

@@ -1,10 +1,22 @@
 .greeting {
   &__img-container {
-    width: 90%;
+    max-width: 19rem;
     margin: 0 auto;
   }
 
   & h2 {
+    // margin: 1.4em 0 1.2em 0;
     font-size: var(--fs-h2);
   }
+
+  &__text {
+    margin: 2.25em 0 4em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1em;
+  }
+}
+
+.btn {
+  align-self: center;
 }
