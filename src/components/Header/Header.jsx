@@ -1,8 +1,12 @@
 import React from "react";
 import Button from "../../elements/Button";
-const Header = () => {
+const Header = ({ margin }) => {
+  const style = {
+    marginBottom: `${margin}rem`,
+  };
+
   return (
-    <div className="header">
+    <div className="header" style={style}>
       <div className="header__logo-container">
         <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">

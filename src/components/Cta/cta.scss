@@ -10,6 +10,13 @@
   padding: 2rem 1.2rem;
   margin: 0 0 2em 0;
 
+  @media (min-width: 768px) {
+    padding: 3.3em 4.9em;
+  }
+
+  & h3 {
+    font-size: var(--fs-h3);
+  }
   & span {
     color: var(--color-cream);
     font-size: var(--fs-p);

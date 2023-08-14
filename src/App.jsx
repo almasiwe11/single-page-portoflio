@@ -15,7 +15,9 @@ function App() {
       <Greeting />
       <MyWork />
       <Cta />
-      <Header />
+      <footer className="container">
+        <Header margin="1.2" />
+      </footer>
     </div>
   );
 }

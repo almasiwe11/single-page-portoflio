@@ -4,6 +4,10 @@
   height: 6vh;
   margin: 0.6em 0 0 0;
 
+  @media (min-width: 768px) {
+    height: 7vh;
+  }
+
   &__logo-container {
     & svg {
       height: 100%;

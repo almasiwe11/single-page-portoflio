@@ -9,12 +9,25 @@
     }
   }
 
+  @media (min-width: 768px) {
+    .hero__text p {
+      width: 50ch;
+      margin: 0 auto;
+      font-size: var(--fs-p);
+    }
+  }
+
   &__skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 10.5rem);
     gap: 1rem;
     margin-top: 1.75em;
+    @media (min-width: 768px) {
+      margin-top: 3.5em;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: repeat(3, 11rem);
+    }
   }
 }
 
@@ -36,6 +49,28 @@
   grid-column: 1/3;
 }
 
+@media (min-width: 768px) {
+  .graphD {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  .illur {
+    grid-row: 2/3;
+    grid-column: 2/4;
+  }
+
+  .photo {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .motionG {
+    grid-column: 2/-1;
+    grid-row: 3/4;
+  }
+}
+
 .skill {
   color: var(--color-cream);
   position: relative;
@@ -52,5 +87,9 @@
     position: absolute;
     bottom: 0;
     left: 1.3rem;
+
+    @media (min-width: 768px) {
+      bottom: 1rem;
+    }
   }
 }

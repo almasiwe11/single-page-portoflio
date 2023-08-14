@@ -22,6 +22,14 @@
   --fs-h2: 1.6rem;
   --fs-h3: 1.4rem;
   --fs-p: 0.9rem;
+
+  @media (min-width: 768px) {
+    --fs-h1: 2.8rem;
+    --fs-h2: 1.9rem;
+    --fs-h3: 1.8rem;
+    --fs-p: 1.1rem;
+    --fs-btn: 1rem;
+  }
 }
 
 * {
@@ -39,6 +47,10 @@ body {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: 768px) {
+    width: 90%;
+  }
 }
 
 img,
@@ -58,6 +70,18 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: var(--fs-btn);
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 7vh;
+  }
+
+  .btn {
+    padding: 1.2em 2.3em;
+    border-radius: 2.2rem;
+  }
 }
 
 h1,
