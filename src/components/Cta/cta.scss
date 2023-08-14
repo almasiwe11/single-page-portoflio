@@ -1,0 +1,16 @@
+.cta {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  border-radius: 0.4rem;
+  padding: 2rem 1.2rem;
+
+  & span {
+    color: var(--color-cream);
+    font-size: var(--fs-p);
+  }
+}

@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap");
+.cta {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  border-radius: 0.4rem;
+  padding: 2rem 1.2rem;
+}
+.cta span {
+  color: var(--color-cream);
+  font-size: var(--fs-p);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -92,6 +108,13 @@
   --fs-h1: 1.9rem;
   --fs-h2: 1.6rem;
   --fs-h3: 1.4rem;
+  --fs-p: 0.9rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {

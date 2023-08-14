@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ImageSlider from "./ImageSlider/ImageSlider";
 const MyWork = () => {
   const slides = [
@@ -54,6 +54,10 @@ const MyWork = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(2);
+  const [width, setWidth] = useState(window.innerWidth);
+  /*  useEffect(() => {
+    console.log("hi");
+  }, []); */
 
   return (
     <div className="myWork">

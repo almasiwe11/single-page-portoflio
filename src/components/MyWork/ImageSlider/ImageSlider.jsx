@@ -9,14 +9,13 @@ const ImageSlider = ({
   setCurrentIndex,
 }) => {
   const contLen = `${slides.length * width}rem`;
-  const moveContainerWidth = (-100 * currentIndex) / slides.length;
-  const imgContainerWidth = (100 * 0.75) / slides.length;
   const imageSliderStyle = {
     width: "100%",
     // overflow: "hidden",
   };
 
   const sliderRef = useRef(null);
+  const imgRef = useRef(null);
 
   const sliderStyleLong = {
     height: height,
@@ -43,11 +42,13 @@ const ImageSlider = ({
   };
 
   function nextSlide() {
+    if (currentIndex >= slides.length - 2) return;
     setCurrentIndex((prev) => prev + 1);
     sliderRef.current.style.transition = "transform 0.3s ease-out";
   }
 
   function prevSlide() {
+    if (currentIndex <= 1) return;
     setCurrentIndex((prev) => prev - 1);
     sliderRef.current.style.transition = "transform 0.3s ease-out";
   }
@@ -55,6 +56,8 @@ const ImageSlider = ({
   console.log(currentIndex);
 
   useEffect(() => {
+    console.log(imgRef.current.style.width);
+
     sliderRef.current.addEventListener("transitionend", transitionEnd);
     function transitionEnd() {
       if (slides[currentIndex].tag === "Last Clone") {
@@ -81,6 +84,7 @@ const ImageSlider = ({
             className="img-container"
             key={image.id}
             style={imgContainerStyle}
+            ref={imgRef}
           >
             <img src={image.src} style={imgStyle} />
           </div>
