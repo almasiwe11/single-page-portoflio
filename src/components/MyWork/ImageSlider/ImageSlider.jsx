@@ -107,11 +107,11 @@ const ImageSlider = ({ slides, currentIndex, setCurrentIndex }) => {
       </div>
 
       <div className="myWork__arrows">
-        <div className="myWork__arr">
-          <ArrowLeft onPress={prevSlide} />
+        <div className="myWork__arr" onClick={prevSlide}>
+          <ArrowLeft />
         </div>
-        <div className="myWork__arr">
-          <ArrowRight onPress={nextSlide} />
+        <div className="myWork__arr" onClick={nextSlide}>
+          <ArrowRight />
         </div>
       </div>
     </div>
@@ -120,14 +120,9 @@ const ImageSlider = ({ slides, currentIndex, setCurrentIndex }) => {
 
 export default ImageSlider;
 
-function ArrowLeft({ onPress }) {
+function ArrowLeft() {
   return (
-    <svg
-      width="15"
-      height="16"
-      xmlns="http://www.w3.org/2000/svg"
-      onClick={onPress}
-    >
+    <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
       <path
         fill="white"
         d="M8 0 0 8l8 8 1.687-1.687-5.121-5.12h10.241V6.807H4.566l5.121-5.12z"
@@ -138,12 +133,7 @@ function ArrowLeft({ onPress }) {
 
 function ArrowRight({ onPress }) {
   return (
-    <svg
-      width="15"
-      height="16"
-      xmlns="http://www.w3.org/2000/svg"
-      onClick={onPress}
-    >
+    <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
       <path
         fill="white"
         d="m6.808 16 8-8-8-8-1.687 1.687 5.121 5.12H.001v2.386h10.241l-5.121 5.12z"

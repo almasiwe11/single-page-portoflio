@@ -10,6 +10,12 @@
   padding: 2rem 1.2rem;
   margin: 0 0 2em 0;
 
+  &__text {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
   @media (min-width: 768px) {
     padding: 3.3em 4.9em;
   }
@@ -20,5 +26,16 @@
   & span {
     color: var(--color-cream);
     font-size: var(--fs-p);
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5em 5.5em 5em 4em;
+
+    &__text {
+      text-align: left;
+      width: 45ch;
+    }
   }
 }

@@ -51,6 +51,10 @@ body {
   @media (min-width: 768px) {
     width: 90%;
   }
+
+  @media (min-width: 1024px) {
+    width: 80%;
+  }
 }
 
 img,
@@ -71,6 +75,7 @@ svg {
   justify-content: center;
   align-items: center;
   font-size: var(--fs-btn);
+  user-select: none;
 }
 
 @media (min-width: 768px) {

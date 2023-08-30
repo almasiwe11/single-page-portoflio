@@ -1,7 +1,6 @@
 .greeting {
   &__img-container {
     max-width: 19rem;
-    margin: 0 auto;
   }
 
   & h2 {
@@ -19,22 +18,36 @@
 
   @media (min-width: 768px) {
     display: flex;
+    align-items: center;
     gap: 3em;
 
     &__text {
-      flex: 1;
       padding: 0 1em;
-      max-width: 50%;
+      flex: 0 0 50%;
     }
 
     &__img-container {
       flex: 1;
+      margin-right: auto;
+      min-width: 45%;
     }
 
     margin-bottom: 4em;
 
     .btn {
       align-self: start;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+    &__img-container {
+      flex: 0 0 40%;
+      min-width: 40%;
+    }
+
+    &__text {
+      margin-left: auto;
     }
   }
 }
